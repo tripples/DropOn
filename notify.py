@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""
+notify.py
+TODO
+"""
 try:
     import gtk, pygtk, os, os.path, pynotify
     pygtk.require('2.0')

@@ -1,6 +1,9 @@
 #!/bin/sh
 #
 # clone this repository after merging all requests
+#sudo -i
+#sudo apt-get install python
+echo "Executing....$0"
 # Create  mountdir if not present
 mkdir -p mountdir
 # Mount socialfs direcotry
@@ -11,8 +14,6 @@ mkdir -p mountdir
 # After mounting for all filesystem logs
 #
 #
-
-
 #
 #Right now socialrun is under test ,after whole package is complete
 #socialrun will be final executable for user

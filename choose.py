@@ -4,11 +4,12 @@ Choose The Options Facebook, Gmail, Twitter,Youtube
 """
 from Tkinter import *
 import Image, ImageTk
-
+import slog
 choices=list()
 global root
 def append(string):
     global choices
+    slog.info("called append"+str(string))
     if string in choices:
         choices.remove(string)
     else:
@@ -17,27 +18,30 @@ def append(string):
 def display():
     global choices
     global root
+    slog.info("")
     root.destroy()
     return choices
 
 def facebook():
+    slog.info("Facebook")
     fb = Tk()
     fb.mainloop()
     return
 
 def twitter():
-    print "Twitter"
+    slog.info("Twitter")
     return
 
 def gmail():
-    print "Gmail"
+    slog.info("Gmail")
     return
 
 def youtube():
-    print "Youtube"
+    slog.info("Youtube")
     return
 
 def choose(app):
+    slog.info("Go to choose window")
     global root
     global choices
     del choices[:]

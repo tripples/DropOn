@@ -11,8 +11,9 @@ for filesystem implementation.
 path = os.path.expanduser('~/') + 'social.log'
 print path
 if os.path.exists(path):
-    fp = open(path, "w")
-    fp.close()
+    #fp = open(path, "w")
+    #fp.close()
+    pass
 else:
     fp = open(path,"w")
     fp.close()
@@ -49,4 +50,4 @@ see social.log for results.
 #debug("Debug")
 #info("Info")
 #warning("Warning")
-info(path)
+#info(path)

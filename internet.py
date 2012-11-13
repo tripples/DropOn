@@ -1,4 +1,10 @@
-
+#!/usr/bin/python
+"""
+internet.py
+TODO:
+write documentation in detail
+"""
+import slog
 import urllib2
 """
 Check availability of Internet Connection

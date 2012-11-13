@@ -1,4 +1,10 @@
 #! /usr/bin/env python
+"""
+main.py
+TODO :
+write usage
+and documentation
+"""
 from notify import *
 from Tkinter import *
 import pyinotify
@@ -6,7 +12,7 @@ import urllib2
 import choose
 import social
 import os
-
+import slog
 """
 Watchdog : main file watching SocialFs directory
 EventHandler will handle all events on SocialFS directory
@@ -21,10 +27,10 @@ Email = ['gmail','yahoo','rediff']
 choices=list()
 
 def distinguish(filePath):
+    slog.info("distinguish" + str(filePath))
     File=open(filePath,"r")
     content=File.read()
     filePath=filePath.split('/').pop()
-    #print filePath
     if content.find('@')>=0 and content.find('.com')>=0:
         return "emailid"
     elif content.find('youtube')>=0:
@@ -41,7 +47,7 @@ def distinguish(filePath):
 class EventHandler(pyinotify.ProcessEvent):
     def process_IN_CREATE(self, event):
         global choices
-        #print "Creating:", event.pathname
+        slog.info("Entered process_in_create"+str(event.pathname))
         if event.pathname.split("/")[0]=='.':
             print "Hidden file: %s" ,event.pathname
         else:
@@ -49,15 +55,16 @@ class EventHandler(pyinotify.ProcessEvent):
             filetype=distinguish(event.pathname)
             social.update(choose.choose(filetype), filetype, event.pathname)
             os.remove(event.pathname)
-        #print internet_on()
+        slog.info(internet_on())
 
     def process_IN_DELETE(self, event):
-        print "Removing:", event.pathname
+        slog.info("Removing:" + str(event.pathname))
 
     def process_IN_MODIFY(self, event):
-        print "Modfying:", event.pathname
+        slog.info("Modifying" + str(event.pathname))
 
 f_path = os.path.expanduser('~/') + 'SocialFS'
+slog.info(f_path)
 handler = EventHandler()
 notifier = pyinotify.Notifier(wm, handler)
 wdd = wm.add_watch(f_path, mask, rec=True)

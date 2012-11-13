@@ -10,9 +10,8 @@ import stat
 import errno
 import os
 import slog
-#import gtk
-fuse.fuse_python_api = (0, 2)
 
+fuse.fuse_python_api = (0, 2)
 
 class  ShareStat(fuse.Stat):
     """
@@ -132,6 +131,7 @@ class ShareFS(fuse.Fuse):
         fsinit
         """
         slog.info("ShareFS=>fsinit")
+        execfile("main.py")
         return 0
 
     def open(self, path, flags):
