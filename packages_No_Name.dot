@@ -1,0 +1,22 @@
+digraph "packages_No_Name" {
+charset="utf-8"
+rankdir=BT
+"3" [shape="box", label="socialfs"];
+"6" [shape="box", label="setup"];
+"7" [shape="box", label="social"];
+"8" [shape="box", label="stest"];
+"9" [shape="box", label="slog"];
+"10" [shape="box", label="notify"];
+"11" [shape="box", label="internet"];
+"12" [shape="box", label="main"];
+"14" [shape="box", label="__init__"];
+"15" [shape="box", label="choose"];
+"3" -> "9" [arrowtail="none", arrowhead="open"];
+"7" -> "9" [arrowtail="none", arrowhead="open"];
+"11" -> "9" [arrowtail="none", arrowhead="open"];
+"12" -> "9" [arrowtail="none", arrowhead="open"];
+"12" -> "15" [arrowtail="none", arrowhead="open"];
+"12" -> "7" [arrowtail="none", arrowhead="open"];
+"12" -> "10" [arrowtail="none", arrowhead="open"];
+"15" -> "9" [arrowtail="none", arrowhead="open"];
+}
