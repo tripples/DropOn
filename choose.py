@@ -99,4 +99,3 @@ def choose(app):
 
     return choices
 
-#def check(filetype, filepath):

@@ -19,3 +19,9 @@ def internet_on():
         return True
     except urllib2.URLError as err: pass
     return False
+
+
+a = internet_on()
+slog.info('Internet  ' + str(a))
+if __name__ == '__main__':
+	pass

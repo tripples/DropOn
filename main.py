@@ -1,3 +1,4 @@
+
 #! /usr/bin/env python
 """
 main.py
@@ -13,6 +14,7 @@ import choose
 import social
 import os
 import slog
+import socialfs
 """
 Watchdog : main file watching SocialFs directory
 EventHandler will handle all events on SocialFS directory

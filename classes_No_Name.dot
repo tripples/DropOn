@@ -1,0 +1,7 @@
+digraph "classes_No_Name" {
+charset="utf-8"
+rankdir=BT
+"4" [shape="record", label="{ShareFS|files : dict\ldirectories : dict\lcodec : str\l|rename()\lchown()\lread()\lcreate()\lmkdir()\lmknod()\lreaddir()\ltrucate()\lwrite()\lgetattr()\lrmdir()\lrelease()\lfsinit()\lchmod()\lunlink()\lopen()\l}"];
+"5" [shape="record", label="{ShareStat|st_ctime : int\lst_mtime : int\lst_nlink : int\lst_gid : int\lst_dev : int\lst_size : int\lst_ino : int\lst_uid : int\lst_mode : int\lst_atime : int\l|set_file_attr()\lset_time()\lset_dir_attr()\l}"];
+"13" [shape="record", label="{EventHandler|\l|process_IN_MODIFY()\lprocess_IN_CREATE()\lprocess_IN_DELETE()\l}"];
+}
